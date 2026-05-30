@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
 const TONE_PROMPTS: Record<string, string> = {
   soft: `やわらかく整えてください。
 以下を徹底してください：
@@ -31,6 +29,7 @@ const TONE_PROMPTS: Record<string, string> = {
 };
 
 export async function POST(req: NextRequest) {
+  const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
   const { text, tone } = await req.json();
 
   if (!text || !tone) {

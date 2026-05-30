@@ -3,12 +3,9 @@
 import { useState } from "react";
 
 const TONES = [
-  { key: "soft",        label: "やわらかく" },
-  { key: "polite",      label: "丁寧に" },
-  { key: "nocatalyst",  label: "催促感を消す" },
-  { key: "weak",        label: "圧を弱める" },
-  { key: "frank",       label: "フランクに" },
-  { key: "boss",        label: "上司向け" },
+  { key: "soft",  label: "やわらかく" },
+  { key: "frank", label: "フランクに" },
+  { key: "boss",  label: "上司向け" },
 ] as const;
 
 type ToneKey = (typeof TONES)[number]["key"];
